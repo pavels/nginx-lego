@@ -1,3 +1,5 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/pavelsor/nginx-lego.svg)](https://hub.docker.com/r/pavelsor/nginx-lego/)
+
 # What is this? 
  
 It is container, which provides nginx based https/ssl proxy. It uses https://letsencrypt.org/ and https://github.com/xenolf/lego to automatically obtain and renew certificates. 
