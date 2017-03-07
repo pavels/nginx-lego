@@ -7,11 +7,14 @@ RUN apk update && apk add ca-certificates go git && \
     go get -u github.com/xenolf/lego && \
     cd /go/src/github.com/xenolf/lego && \
     go build -o /usr/bin/lego . && \
+    go get -u github.com/anarcher/go-cron && \
+    cd /go/src/github.com/anarcher/go-cron && \
+    go build -o /usr/bin/go-cron . && \
     apk del go git && \
     rm -rf /var/cache/apk/* && \
     rm -rf /go
 
-RUN apk update && apk add nginx supervisor gettext && rm -rf /var/cache/apk/*
+RUN apk update && apk add nginx supervisor gettext bash && rm -rf /var/cache/apk/*
 
 ADD nginx.conf /
 ADD supervisord.conf /
